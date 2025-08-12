@@ -1,0 +1,829 @@
+type: collection.insomnia.rest/5.0
+name: OO
+meta:
+  id: wrk_fbba83dc6c14402d81d05edf6372cac3
+  created: 1753280105428
+  modified: 1753280105428
+collection:
+  - name: API OO
+    meta:
+      id: fld_4974f91bfe494a13a42b243e53d9fe96
+      created: 1749566475420
+      modified: 1749566475420
+      sortKey: -1749566475420
+    children:
+      - name: Metadata
+        meta:
+          id: fld_b9bb95a2af7941799d9f33ac9b9311aa
+          created: 1749733576032
+          modified: 1753280238780
+          sortKey: -1749733563111
+        children:
+          - name: Recipes
+            meta:
+              id: fld_4dcc8b9686254993821f3819c86e0dc0
+              created: 1749745817393
+              modified: 1751042422044
+              sortKey: -1749733598479
+            children:
+              - url: "{{ _.Api.URL }}{{ _.Api.Dymmys.COP.URL }}/Metadata/Recipes"
+                name: Get Recipes
+                meta:
+                  id: req_2313944799184b478230b727cd6db11c
+                  created: 1749745806565
+                  modified: 1752868360472
+                  isPrivate: false
+                  sortKey: -1749745828465
+                method: GET
+                body:
+                  mimeType: application/json
+                  text: |-
+                    {
+                    	"BusinessVersion": "SPRING24",
+                      "idProduct": "87c8af74-6d10-4ab9-b34a-1622cb4c4acf"
+                    }
+                headers:
+                  - name: Content-Type
+                    value: application/json
+                  - name: User-Agent
+                    value: insomnia/11.0.2
+                settings:
+                  renderRequestBody: true
+                  encodeUrl: true
+                  followRedirects: global
+                  cookies:
+                    send: true
+                    store: true
+                  rebuildPath: true
+              - url: "{{ _.Api.URL }}{{ _.Api.Dymmys.COP.URL }}/Metadata/Recipes"
+                name: Create Recipes
+                meta:
+                  id: req_7ea40d4f369243aca55e6bae76b7fbcb
+                  created: 1749746141733
+                  modified: 1751932962454
+                  isPrivate: false
+                  sortKey: -1749739713322
+                method: POST
+                body:
+                  mimeType: application/json
+                  text: |-
+                    {
+                        "BusinessVersion": "SPRING24",
+                        "idProduct": "87c8af74-6d10-4ab9-b34a-1622cb4c4acf",
+                        "isDevEnv": false,
+                        "displayName": "GERMAN1",
+                        "categoryType": "684ae66cdcaedef79a3e792e"
+                    }
+                headers:
+                  - name: Content-Type
+                    value: application/json
+                  - name: User-Agent
+                    value: insomnia/11.0.2
+                settings:
+                  renderRequestBody: true
+                  encodeUrl: true
+                  followRedirects: global
+                  cookies:
+                    send: true
+                    store: true
+                  rebuildPath: true
+              - url: "{{ _.Api.URL }}{{ _.Api.Dymmys.COP.URL }}/Metadata/Recipes"
+                name: Get Recipes
+                meta:
+                  id: req_dc32fa05065847f3b97850b2ba584f0e
+                  created: 1752867931472
+                  modified: 1752868322823
+                  isPrivate: false
+                  sortKey: -1749742770893.5
+                method: POST
+                body:
+                  mimeType: application/json
+                  text: |-
+                    {
+                    	"BusinessVersion": "SPRING24",
+                      "idProduct": "87c8af74-6d10-4ab9-b34a-1622cb4c4acf"
+                    }
+                headers:
+                  - name: Content-Type
+                    value: application/json
+                  - name: User-Agent
+                    value: insomnia/11.0.2
+                settings:
+                  renderRequestBody: true
+                  encodeUrl: true
+                  followRedirects: global
+                  cookies:
+                    send: true
+                    store: true
+                  rebuildPath: true
+          - url: "{{ _.Api.URL }}{{ _.Api.Dymmys.COP.URL }}/Metadata/Tiers"
+            name: Create Tier
+            meta:
+              id: req_62b29dba36cc4639b0a68d335d089b7d
+              created: 1747950946587
+              modified: 1752872456843
+              isPrivate: false
+              sortKey: -1749733597579
+            method: POST
+            body:
+              mimeType: application/json
+              text: |-
+                {
+                	"sku": "p0",
+                  "displayName": "TierTesting2GJ",
+                  "supportedUsers": 15
+                }
+            headers:
+              - name: Content-Type
+                value: application/json
+              - name: User-Agent
+                value: insomnia/11.0.2
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: "{{ _.Api.URL }}{{ _.Api.Dymmys.COP.URL }}/Metadata/Tiers"
+            name: Get All Tiers
+            meta:
+              id: req_f91d5c69aad34e2880fd774fed98b5e2
+              created: 1749502565959
+              modified: 1753280241639
+              isPrivate: false
+              sortKey: -1749733597554
+            method: GET
+            body:
+              mimeType: application/json
+            headers:
+              - name: Content-Type
+                value: application/json
+              - name: User-Agent
+                value: insomnia/11.0.2
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: "{{ _.Api.URL }}{{ _.Api.Dymmys.COP.URL
+              }}/Metadata/Tiers/c9ac8140-85d1-49b9-afee-30871ac1c051"
+            name: Update Cop Tier
+            meta:
+              id: req_18bed125c5124201ad675d0ce9082716
+              created: 1749504285281
+              modified: 1749734157557
+              isPrivate: false
+              sortKey: -1749733597529
+            method: PUT
+            body:
+              mimeType: application/json
+              text: |-
+                	{
+                		"idTier": "c9ac8140-85d1-49b9-afee-30871ac1c051",
+                		"sku": "p0",
+                		"displayName": "TierTesting",
+                		"supportedUsers": 15
+                	}
+            headers:
+              - name: Content-Type
+                value: application/json
+              - name: User-Agent
+                value: insomnia/11.0.2
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: "{{ _.Api.URL }}{{ _.Api.Dymmys.COP.URL }}/Metadata/Regions"
+            name: Create Region
+            meta:
+              id: req_a4feb012754f4eefa0b2d708e56a3c5f
+              created: 1749566455290
+              modified: 1752872226278
+              isPrivate: false
+              sortKey: -1749733597779
+            method: POST
+            body:
+              mimeType: application/json
+              text: |-
+                {
+                        "name": "Region Test GermanGJ1",
+                				"idRegion": "4a645ff6-3975-411e-baaa-74c7b5f23220"
+                    }
+            headers:
+              - name: Content-Type
+                value: application/json
+              - name: User-Agent
+                value: insomnia/11.0.2
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: "{{ _.Api.URL }}{{ _.Api.Dymmys.COP.URL }}/Metadata/Products/"
+            name: Create Product
+            meta:
+              id: req_20605f78da524efbae80630587cbf0eb
+              created: 1749567413327
+              modified: 1752870677853
+              isPrivate: false
+              sortKey: -1749733597879
+            method: POST
+            body:
+              mimeType: application/json
+              text: |-
+                {
+                	"name": "StumpJumper1",
+                	"idProduct": "fc7561d4-8e3f-430f-8138-1bc28486829c"
+                }
+            headers:
+              - name: Content-Type
+                value: application/json
+              - name: User-Agent
+                value: insomnia/11.0.2
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: "{{ _.Api.URL }}{{ _.Api.Dymmys.COP.URL }}/Metadata/Products"
+            name: Get All Products
+            meta:
+              id: req_72f65fd32765415b87845c1cbe060f14
+              created: 1749589321464
+              modified: 1752870491125
+              isPrivate: false
+              sortKey: -1749733597829
+            method: GET
+            body:
+              mimeType: application/json
+            headers:
+              - name: Content-Type
+                value: application/json
+              - name: User-Agent
+                value: insomnia/11.0.2
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: "{{ _.Api.URL }}{{ _.Api.Dymmys.COP.URL }}/Metadata/Categories"
+            name: Create Categories
+            meta:
+              id: req_421bdf5f69ca4c42a8db98064934510f
+              created: 1749589875414
+              modified: 1752869922949
+              isPrivate: false
+              sortKey: -1749733597979
+            method: POST
+            body:
+              mimeType: application/json
+              text: |-
+                {
+                	"name": "German",
+                	"idCategory": "e083050f-ad74-4a34-b201-c66ce344c132"
+                }
+            headers:
+              - name: Content-Type
+                value: application/json
+              - name: User-Agent
+                value: insomnia/11.0.2
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: "{{ _.Api.URL }}{{ _.Api.Dymmys.COP.URL }}/Metadata/Categories"
+            name: Get All Categories
+            meta:
+              id: req_c8b904cab00a4c2890052603af51b3da
+              created: 1749590047468
+              modified: 1752868495926
+              isPrivate: false
+              sortKey: -1749733597929
+            method: GET
+            body:
+              mimeType: application/json
+            headers:
+              - name: Content-Type
+                value: application/json
+              - name: User-Agent
+                value: insomnia/11.0.2
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: "{{ _.Api.URL }}{{ _.Api.Dymmys.COP.URL }}/Metadata/EnvCategories"
+            name: Create EnvCategories
+            meta:
+              id: req_1643eab21d7c42efa119f5aede9b1641
+              created: 1749590447955
+              modified: 1751041026673
+              isPrivate: false
+              sortKey: -1749733598179
+            method: POST
+            body:
+              mimeType: application/json
+              text: |-
+                {
+                	"categoryId": 602,
+                  "name": "CLB5",
+                  "tier": "Basic",
+                  "vmType": "Standard_F2s_v2",
+                  "dbType": "S3",
+                  "isolationLevel": "Isolated",
+                  "isClustered": true,
+                  "bpu": 5.0,
+                  "isVisible": true,
+                  "dbSizeGB": 250,
+                  "dbEdition": "Standard",
+                  "vmInstanceCount": 1,
+                  "spCommonSKU": "P1V3",
+                  "spCommonWorkerCount": 1,
+                  "spSchedulerSKU": "P1V2",
+                  "spSchedulerWorkerCount": 1,
+                  "sizeStorageGB": 500,
+                  "isTestTier": true,
+                  "isResourceShared": false,
+                  "isLargeEnvironment": false
+                }
+            headers:
+              - name: Content-Type
+                value: application/json
+              - name: User-Agent
+                value: insomnia/11.0.2
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: "{{ _.Api.URL }}{{ _.Api.Dymmys.COP.URL }}/Metadata/EnvCategories"
+            name: Get EnvCategories
+            meta:
+              id: req_94f851bcab7444c48504cd1326182de7
+              created: 1749590567908
+              modified: 1752870088133
+              isPrivate: false
+              sortKey: -1749733598079
+            method: GET
+            body:
+              mimeType: application/json
+            headers:
+              - name: Content-Type
+                value: application/json
+              - name: User-Agent
+                value: insomnia/11.0.2
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: "{{ _.Api.URL }}{{ _.Api.Dymmys.COP.URL }}/Metadata/Regions"
+            name: Get All Regions
+            meta:
+              id: req_5cb3f9ea9c704af4891e6d26ed7e2512
+              created: 1749688612013
+              modified: 1752870730554
+              isPrivate: false
+              sortKey: -1749733597679
+            method: GET
+            body:
+              mimeType: application/json
+            headers:
+              - name: Content-Type
+                value: application/json
+              - name: User-Agent
+                value: insomnia/11.0.2
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+      - name: Bizagi Product
+        meta:
+          id: fld_0635e9174a3140cab631fab097a17b1b
+          created: 1751040936052
+          modified: 1751040947167
+          sortKey: -1749733562986
+        children:
+          - url: "{{ _.Api.URL }}{{ _.Api.Dymmys.COP.URL }}/Product/Create"
+            name: Create Product (Region)
+            meta:
+              id: req_dc2c4a70f8ed43388042030ba86d1ff5
+              created: 1751040955607
+              modified: 1751929226939
+              isPrivate: false
+              sortKey: -1751040955607
+            method: POST
+            body:
+              mimeType: application/json
+              text: >-
+                {
+                	"idCompany": "3c225cd1-f8f9-4dfd-a822-7838ebd87632",
+                	"idRegion": "bf642037-c792-4e3d-bcb1-14e4de4a0c16",
+                	"idAzureSubscription": "436a8d15-2ecf-42e8-bdfd-c6234e989bd7",
+                	"idProductCategoryVersion": "809a6e17-f7e1-415d-91ac-928d0d83f765",
+                	"idProduct": "eaa7a5c1-86f4-448e-b1f7-2f3efadb12fd",
+                	"Channel": "qa",
+                	"Security": false
+                }
+            headers:
+              - name: Content-Type
+                value: application/json
+              - name: User-Agent
+                value: insomnia/11.2.0
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: "{{ _.Api.URL }}{{ _.Api.Dymmys.COP.URL }}/Product"
+            name: Get All Products
+            meta:
+              id: req_51963276ac1044bfbfa3a4c566b4f50d
+              created: 1751045539175
+              modified: 1751644497711
+              isPrivate: false
+              sortKey: -1750827746974
+            method: GET
+            body:
+              mimeType: application/json
+              text: >-
+                {
+                	"idCompany": "3c225cd1-f8f9-4dfd-a822-7838ebd87632",
+                	"idRegion": "bf642037-c792-4e3d-bcb1-14e4de4a0c16",
+                	"idAzureSubscription": "436a8d15-2ecf-42e8-bdfd-c6234e989bd7",
+                	"idProductCategoryVersion": "809a6e17-f7e1-415d-91ac-928d0d83f765",
+                	"idProduct": "eaa7a5c1-86f4-448e-b1f7-2f3efadb12fd",
+                	"Channel": "qa",
+                	"Security": false
+                }
+            headers:
+              - name: Content-Type
+                value: application/json
+              - name: User-Agent
+                value: insomnia/11.2.0
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: "{{ _.Api.URL }}{{ _.Api.Dymmys.COP.URL
+              }}/Product/76b9dc7f-d3ae-4151-a5a2-c5937272e531/Status"
+            name: Get Status
+            meta:
+              id: req_268cc108182f496bad105ad475663f1c
+              created: 1751644458510
+              modified: 1751644503557
+              isPrivate: false
+              sortKey: -1750517474686
+            method: GET
+            body:
+              mimeType: application/json
+              text: >-
+                {
+                	"idCompany": "3c225cd1-f8f9-4dfd-a822-7838ebd87632",
+                	"idRegion": "bf642037-c792-4e3d-bcb1-14e4de4a0c16",
+                	"idAzureSubscription": "436a8d15-2ecf-42e8-bdfd-c6234e989bd7",
+                	"idProductCategoryVersion": "809a6e17-f7e1-415d-91ac-928d0d83f765",
+                	"idProduct": "eaa7a5c1-86f4-448e-b1f7-2f3efadb12fd",
+                	"Channel": "qa",
+                	"Security": false
+                }
+            headers:
+              - name: Content-Type
+                value: application/json
+              - name: User-Agent
+                value: insomnia/11.2.0
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: "{{ _.Api.URL }}{{ _.Api.Dymmys.COP.URL }}/Product/Create"
+            name: Create Product (Base Infra)
+            meta:
+              id: req_6893309b21fa47bb8e7553d2f0d81211
+              created: 1751892031852
+              modified: 1751929702215
+              isPrivate: false
+              sortKey: -1750934351290.5
+            method: POST
+            body:
+              mimeType: application/json
+              text: >-
+                {
+                	"idCompany": "3c225cd1-f8f9-4dfd-a822-7838ebd87632",
+                  "idRegion": "bf642037-c792-4e3d-bcb1-14e4de4a0c16",
+                  "idAzureSubscription": "436a8d15-2ecf-42e8-bdfd-c6234e989bd7",
+                  "idProductCategoryVersion": "809a6e17-f7e1-415d-91ac-928d0d83f999",
+                  "idProduct": "87c8af74-6d10-4ab9-b34a-1622cb4c4acf",
+                	"parameters": {
+                      "email": "ownercompany@correo.com",
+                			"firstName": "Juan",
+                			"lastName": "Perez",
+                			"password": "NewPassToProduct"
+                        }
+                }
+            headers:
+              - name: Content-Type
+                value: application/json
+              - name: User-Agent
+                value: insomnia/11.2.0
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+      - name: Company
+        meta:
+          id: fld_650913ab3a7346b7880d604fd69c6a10
+          created: 1751042409484
+          modified: 1751042433969
+          sortKey: -1749733563004.75
+        children:
+          - url: "{{ _.Api.URL }}{{ _.Api.Dymmys.COP.URL }}/Companies/"
+            name: Get All Companies
+            meta:
+              id: req_9dcf34dda2c846908c9373e8080a984b
+              created: 1751042447749
+              modified: 1753281944780
+              isPrivate: false
+              sortKey: -1751042456690
+            method: GET
+            body:
+              mimeType: application/json
+            headers:
+              - name: Content-Type
+                value: application/json
+              - name: User-Agent
+                value: insomnia/11.2.0
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: "{{ _.Api.URL }}{{ _.Api.Dymmys.COP.URL }}/Companies/Create"
+            name: Create Companies
+            meta:
+              id: req_e50a7bca1a2946139020694e030dd154
+              created: 1753280125940
+              modified: 1753281931197
+              isPrivate: false
+              sortKey: -1751041706148.5
+            method: POST
+            body:
+              mimeType: application/json
+              text: >-
+                {
+                    "displayName": "Company202507230859-qa",
+                    "azureSubscriptions": {
+                        "idAzureSubscription": "8f46c060-2d83-4122-890b-e2ec1eae1148",
+                        "azureObjectId": "8f46c060-2d83-4122-890b-e2ec1eae1148",
+                        "azureTenantId": "8f46c060-2d83-4122-890b-e2ec1eae1148",
+                        "azureClientId": "8f46c060-2d83-4122-890b-e2ec1eae1148",
+                        "azureSecretId": "8f46c060-2d83-4122-890b-e2ec1eae1148",
+                        "azureSubscriptionType": 0
+                    },
+                    "realTier": "f1db6dd8-b1bc-4774-9ab8-370638fcb58b",
+                    "hasSharedInfrastructure": false,
+                	  "sharedInfrastructureServices": null
+                }
+            headers:
+              - name: Content-Type
+                value: application/json
+              - name: User-Agent
+                value: insomnia/11.2.0
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+      - name: Status
+        meta:
+          id: fld_78a32145501d48f68fa416e35c7111bf
+          created: 1751053313541
+          modified: 1751053336880
+          sortKey: -1749733563161
+        children:
+          - url: "{{ _.Api.URL }}{{ _.Api.Dymmys.COP.URL
+              }}/Status/76b9dc7f-d3ae-4151-a5a2-c5937272e531"
+            name: Get Status
+            meta:
+              id: req_17045ecd7c3f457b8d8d7944dd3234c5
+              created: 1751052914901
+              modified: 1751053342446
+              isPrivate: false
+              sortKey: -1751053342412
+            method: GET
+            body:
+              mimeType: application/json
+            headers:
+              - name: Content-Type
+                value: application/json
+              - name: User-Agent
+                value: insomnia/11.2.0
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+      - url: "{{ _.Api.URL }}/api/status"
+        name: Api Status
+        meta:
+          id: req_3d27c2b157fc48eeb3a6ba72675de689
+          created: 1749658505508
+          modified: 1751053322944
+          isPrivate: false
+          sortKey: -1749733563411
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.0.2
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+  - name: API UTILS
+    meta:
+      id: fld_c09423a7797646f68b6811c054ac2f51
+      created: 1752869677967
+      modified: 1752869677967
+      sortKey: -1752869677967
+    children:
+      - name: UUID
+        meta:
+          id: fld_552fd72a0ec54b99b4f8637122d0df5b
+          created: 1752869706397
+          modified: 1752869706397
+          sortKey: -1752869706397
+        children:
+          - url: "{{ _.Api.URL }}/api/utils/UUID"
+            name: Get UUID
+            meta:
+              id: req_185bc21f5bda4a709debe2fac4dea19c
+              created: 1752869710653
+              modified: 1752869907485
+              isPrivate: false
+              sortKey: -1752869710653
+            method: GET
+            headers:
+              - name: User-Agent
+                value: insomnia/11.0.2
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+cookieJar:
+  name: Default Jar
+  meta:
+    id: jar_4eb15c4585994451bd1cde6fc34be08e
+    created: 1744074364967
+    modified: 1747950978859
+  cookies:
+    - id: 17d3363d-71fb-4e99-a4e0-28d435e3c094
+      key: ARRAffinity
+      value: b73cf589caf2095e7bc71ad347b8dc411c8489582448fbca12649a685fc1a401
+      domain: dev-dev2-prodopsmp37-qa.bizagi.com
+      path: /
+      secure: true
+      httpOnly: true
+      hostOnly: false
+    - id: 72565d15-274d-4009-bc03-3f0ce1f4bd43
+      key: ARRAffinitySameSite
+      value: b73cf589caf2095e7bc71ad347b8dc411c8489582448fbca12649a685fc1a401
+      domain: dev-dev2-prodopsmp37-qa.bizagi.com
+      path: /
+      secure: true
+      httpOnly: true
+      hostOnly: false
+environments:
+  name: Environments
+  meta:
+    id: env_d99fa0cc491049e58ed7eb0074dd4afe
+    created: 1744074364959
+    modified: 1744074555363
+    isPrivate: false
+  subEnvironments:
+    - name: API OO Dev (Local)
+      meta:
+        id: env_eca337d442f343a18f3a54be44eaf881
+        created: 1744074559646
+        modified: 1751839771131
+        isPrivate: false
+        sortKey: 1744074559646
+      data:
+        Api:
+          URL: http://localhost:3002
+          Health:
+            Route: /api/health
+          Users:
+            Route: /api/users
+          ToDoList:
+            Route: /api/todolist
+          Dymmys:
+            COP:
+              URL: /api/v1
+      color: "#ea1a1a"
+    - name: API OO Dev (Azure)
+      meta:
+        id: env_214a73b0db5c4c1b9971c7b9020192a9
+        created: 1749743718521
+        modified: 1751839769165
+        isPrivate: false
+        sortKey: 1744074559696
+      data:
+        Api:
+          URL: http://apioperationsorchestrator-dev-cqcvgsdaa0g7d6g6.canadacentral-01.azurewebsites.net
+          Health:
+            Route: /api/health
+          Users:
+            Route: /api/users
+          ToDoList:
+            Route: /api/todolist
+          Dymmys:
+            COP:
+              URL: /api/v1
+      color: "#971aea"
+    - name: API OO (Prod)
+      meta:
+        id: env_4d69600b640a4f328876a7d3e5eb12a0
+        created: 1749829005222
+        modified: 1750208036625
+        isPrivate: false
+        sortKey: 1749829005222
+      data:
+        Api:
+          URL: https://apioperationsorchestrator-fxb4d8b5fqe8f8b7.canadacentral-01.azurewebsites.net
+          Health:
+            Route: /api/health
+          Users:
+            Route: /api/users
+          ToDoList:
+            Route: /api/todolist
+          Dymmys:
+            COP:
+              URL: /api/v1
+      color: "#26d719"

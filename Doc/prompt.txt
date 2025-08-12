@@ -1,0 +1,124 @@
+********************************************************************************************************************************
+RECIPES
+********************************************************************************************************************************
+Teniendo en cuenta la arquitectura de Vista, modelo, Controlador crear un CRUD para un objeto con el nombre de copRecipes. 
+Donde el componente de ruta debe tener el nombre de copRecipesRoute.js
+Donde el componente de controlador debe tener el nombre de copRecipesController.js
+Donde el componente de modelo debe tener el nombre de copRecipes.js
+
+El modelo debe usar un schema de mongo con moongose, y la estrucutra de recipe devbe ser mas o menos esta:
+
+{
+    "BusinessVersion": "SPRING24",
+    "idProduct": Referencia al modelo copProduct,
+    "isDevEnv": true,
+    "idProductCategoryVersion": "e3e31ebb-2ac2-40fd-a39c-f9636a6496f5",
+    "displayName": "12.32.62-support-spring24-base 20240903.3 [GA - DEVTEST - MCW_UNILEVER_ENV_CACHE] - 2025.03.14.12:45",
+    "categoryType": Referencia al modelo copCategories
+}
+
+El idProductCategoryVersion es el valor unico que no se puede repetir.
+********************************************************************************************************************************
+
+********************************************************************************************************************************
+COMPANY
+********************************************************************************************************************************
+Teniendo en cuenta la arquitectura de Vista, modelo, Controlador crear un CRUD para un objeto con el nombre de copCompany. 
+Donde el componente de ruta debe tener el nombre de copCompanyRoute.js
+Donde el componente de controlador debe tener el nombre de copCompanyController.js
+Donde el componente de modelo debe tener el nombre de copCompany.js
+
+El modelo debe usar un schema de mongo con moongose, y la estrucutra de company debe ser mas o menos esta:
+{
+    "id": "61b2fdd4-2580-45e4-9f97-5f226e6263d7",
+    "displayName": "string",
+    "azureSubscriptions": {
+      "idAzureSubscription": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+      "azureObjectId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+      "azureTenantId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+      "azureClientId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+      "azureSecretId": "string",
+      "secretName": "string",
+      "azureSubscriptionType": 0
+    },
+  "idTier": "string",
+  "hasSharedInfrastructure": true,
+  "sharedInfrastructureServices": {
+    "elasticServerName": "string",
+    "elasticServerUser": "string",
+    "elasticServerPassword": "string",
+    "elasticServerFQDN": "string",
+    "elasticServerResourceGroup": "string",
+    "elasticServerLocation": "string",
+    "elasticServerPoolName": "string",
+    "azureSubscriptionId": "string",
+    "azureSubscriptionClientId": "string",
+    "azureSubscriptionSecret": "string",
+    "azureSubscriptionTenantId": "string"
+  }
+
+El id es el valor unico que no se puede repetir.
+El idTier hace relacion al modelo CopTier.
+Si el cmapo hasSharedInfrastructure es igual true es necesaria la informacion de sharedInfrastructureServices,
+    si no es true entonces no es necesaria.
+********************************************************************************************************************************
+
+
+
+
+********************************************************************************************************************************
+PRODUCTOS BIZAGI
+********************************************************************************************************************************
+Teniendo en cuenta la arquitectura de Vista, modelo, Controlador crear un CRUD para un objeto con el nombre de copBizagiProduct. 
+Donde el componente de ruta debe tener el nombre de copBAProductRoute.js
+Donde el componente de controlador debe tener el nombre de copBAProductController.js
+Donde el componente de modelo debe tener el nombre de copBAProduct.js
+ 
+El modelo debe usar un schema de mongo con moongose, y la estrucutra de company debe ser mas o menos esta:
+ 
+{
+	  "idCompany": "ec6cc118-7689-4afc-913c-ac431d4f7047",
+    "idRegion": "29a76f1b-b986-4cd8-815f-2a425a923006",
+    "idAzureSubscription": "436a8d15-2ecf-42e8-bdfd-c6234e989bd7",
+    "idProductCategoryVersion": "08c15ca8-1ebb-4c4f-8a85-6eae7f9f9155",
+    "idProduct": "AB8053E8-6B0D-4186-8C30-635F0E78914B",
+	  "Channel": "qa",
+		"Security": "true",
+    "idProductInstance": "e3e31ebb-2ac2-40fd-a39c-f9636a6496f5"
+}
+ 
+El idProductInstance es el valor unico que no se puede repetir.
+El idCompany hace relacion al modelo CopCompany y su atributo id.
+El idRegion hace relacion al modelo CopRegion y su atributo idRegion.
+El idProductCategoryVersion hace relacion al modelo CopRecipes y su atributo idProductCategoryVersion.
+El idProduct hace relacion al modelo CopProduct y su atributo idProduct.
+***************************************************************************************************************************************
+
+
+********************************************************************************************************************************
+TRANSACTION 
+********************************************************************************************************************************
+Teniendo en cuenta la arquitectura de Vista, modelo, Controlador crear un CRUD para un objeto con el nombre de copTransaction. 
+Donde el componente de ruta debe tener el nombre de copTransactionRoute.js
+Donde el componente de controlador debe tener el nombre de copTransactionController.js
+Donde el componente de modelo debe tener el nombre de copTransaction.js
+ 
+El modelo debe usar un schema de mongo con moongose, y la estrucutra de Transaction debe ser mas o menos esta:
+ 
+{
+	  "id": "ec6cc118-7689-4afc-913c-ac431d4f7047",
+    "idRegion": "29a76f1b-b986-4cd8-815f-2a425a923006",
+    "idAzureSubscription": "436a8d15-2ecf-42e8-bdfd-c6234e989bd7",
+    "idProductCategoryVersion": "08c15ca8-1ebb-4c4f-8a85-6eae7f9f9155",
+    "idProduct": "AB8053E8-6B0D-4186-8C30-635F0E78914B",
+	  "Channel": "qa",
+		"Security": "true",
+    "idProductInstance": "e3e31ebb-2ac2-40fd-a39c-f9636a6496f5"
+}
+ 
+El idProductInstance es el valor unico que no se puede repetir.
+El idCompany hace relacion al modelo CopCompany y su atributo id.
+El idRegion hace relacion al modelo CopRegion y su atributo idRegion.
+El idProductCategoryVersion hace relacion al modelo CopRecipes y su atributo idProductCategoryVersion.
+El idProduct hace relacion al modelo CopProduct y su atributo idProduct.
+***************************************************************************************************************************************

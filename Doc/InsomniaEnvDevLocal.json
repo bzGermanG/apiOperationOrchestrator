@@ -1,0 +1,19 @@
+{
+	"Api": {
+		"URL": "http://localhost:3002",
+		"Health": {
+			"Route": "/api/health"
+		},
+		"Users": {
+			"Route": "/api/users"
+		},
+		"ToDoList": {
+			"Route": "/api/todolist"
+		},
+		"Dymmys": {
+			"COP": {
+				"URL": "/api/v1"
+			}
+		}
+	}
+}

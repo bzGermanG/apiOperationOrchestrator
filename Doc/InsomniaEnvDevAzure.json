@@ -1,0 +1,19 @@
+{
+	"Api": {
+		"URL": "http://apioperationsorchestrator-dev-cqcvgsdaa0g7d6g6.canadacentral-01.azurewebsites.net",
+		"Health": {
+			"Route": "/api/health"
+		},
+		"Users": {
+			"Route": "/api/users"
+		},
+		"ToDoList": {
+			"Route": "/api/todolist"
+		},
+		"Dymmys": {
+			"COP": {
+				"URL": "/api/v1"
+			}
+		}
+	}
+}

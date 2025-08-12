@@ -1,0 +1,4 @@
+2025-06-13 [2GJ]: Se agrego Pull.
+2025-06-13 [2GJ]: Se regenera workflow de github de ApiOperationsOrchestrator a Main.
+2025-06-17 [2GJ]: Se actualiza cambio de productos a array [RE-DEPLOY].
+2025-06-19 [2GJ]: PUSH para correccion de categoryType en GetRecipes. [RE]
