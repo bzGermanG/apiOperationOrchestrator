@@ -15,8 +15,13 @@ import {
 } from '../../controllers/apiCop/copBAProductController.js';
 
 import {
-    createBizagiSubscription
+    createBizagiSubscription,
+    getBizagiSubscriptions
 } from '../../controllers/apiCop/copBASubscriptionController.js'
+
+import {
+    createBizagiProject
+} from '../../controllers/apiCop/copBAProjectController.js';
 
 // Crear producto Bizagi
 router.post('/Create', createBizagiProduct);
@@ -24,6 +29,12 @@ console.log("ROUTE: /v1/Product/Create");
 
 //Create Bizagi Subscription
 router.post('/CreateSubscription', createBizagiSubscription);
+
+//Obtener todas las suscripciones Bizagi
+router.get('/getSubscriptions', getBizagiSubscriptions);
+
+//Create Bizagi Project
+router.post('/CreateProject', createBizagiProject);
 
 //Obtener el estado del producto.
 router.get('/:id/Status', getStatus)
