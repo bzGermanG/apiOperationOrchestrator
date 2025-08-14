@@ -14,9 +14,16 @@ import {
     getBizagiProductComponentStatuses
 } from '../../controllers/apiCop/copBAProductController.js';
 
+import {
+    createBizagiSubscription
+} from '../../controllers/apiCop/copBASubscriptionController.js'
+
 // Crear producto Bizagi
 router.post('/Create', createBizagiProduct);
 console.log("ROUTE: /v1/Product/Create");
+
+//Create Bizagi Subscription
+router.post('/CreateSubscription', createBizagiSubscription);
 
 //Obtener el estado del producto.
 router.get('/:id/Status', getStatus)
