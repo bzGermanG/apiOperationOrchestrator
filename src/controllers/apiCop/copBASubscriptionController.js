@@ -24,6 +24,16 @@ async function createBizagiSubscription(req, res)
     }
 }
 
+async function getBizagiSubscriptions(req, res) {
+  try {
+    const subscriptions = await copBizagiSubscription.find();
+    res.status(200).json(subscriptions);
+  } catch (error) {
+    res.status(400).json({ error: error.message });
+  }
+}
+
 export {
-  createBizagiSubscription
+  createBizagiSubscription,
+  getBizagiSubscriptions
 };
