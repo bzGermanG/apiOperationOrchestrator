@@ -150,7 +150,101 @@ async function createBizagiProduct(req, res)
     }
     
     res.status(202).json(bizagiProduct);
-  } catch (error) {
+  } 
+  catch (error) 
+  {
+    res.status(400).json({ error: error.message });
+  }
+}
+
+// Crear un nuevo ambiente bizagi
+async function createBizagiEnvironment(req, res)
+{
+  try 
+  {
+    // Si existe req.body.Parameters, extraer sus campos al nivel raíz
+    let envData = { ...req.body };
+    if (envData.Parameters && typeof envData.Parameters === 'object') 
+    {
+      envData = { ...envData, ...envData.Parameters };
+      delete envData.Parameters;
+    }
+
+    // Validar atributos requeridos
+    const requiredFields = [
+      'idCompany',
+      'idRegion',
+      'idAzureSubscription',
+      'idProductCategoryVersion',
+      'category',
+      'environmentType',
+      'adminEmail',
+      'environmentName',
+      'build'
+    ];
+    const missingFields = requiredFields.filter(field => !envData[field] || envData[field] === '');
+    if (missingFields.length > 0) {
+      return res.status(400).json({ error: `Faltan los siguientes campos requeridos: ${missingFields.join(', ')}` });
+    }
+
+    // Validar que el idCompany exista
+    const company = await CopCompany.findOne({ idCompany: envData.idCompany });
+    if (!company) {
+      return res.status(400).json({ error: 'El idCompany proporcionado no existe.' });
+    }
+
+    // Validar que el idRegion exista
+    const region = await CopRegion.findOne({ idRegion: envData.idRegion });
+    if (!region) {
+      return res.status(400).json({ error: 'El idRegion proporcionado no existe.' });
+    }
+
+    // Validar que el idProductCategoryVersion exista
+    const recipe = await CopRecipes.findOne({ idProductCategoryVersion: envData.idProductCategoryVersion });
+    if (!recipe) {
+      return res.status(400).json({ error: 'El idProductCategoryVersion proporcionado no existe.' });
+    }
+
+    // Buscar el idProduct del producto con nombre 'BizagiPaaS'
+    const bizagiPaaSProduct = await CopProduct.findOne({ name: 'BizagiPaaS' });
+    if (!bizagiPaaSProduct) {
+      return res.status(400).json({ error: 'No se encontró el producto BizagiPaaS.' });
+    }
+    const idProduct = bizagiPaaSProduct.idProduct;
+
+    // Agregar deployStatus por defecto
+    const productData = {
+      ...envData,
+      idProduct: idProduct,
+      deployStatus: 'creating'
+    };
+
+    const bizagiProduct = new CopBizagiProduct(productData);
+    await bizagiProduct.save();
+
+     // Crear componentes status para el producto
+    try 
+    {
+      await createComponentStatusesForProduct(
+        bizagiPaaSProduct.name, 
+        bizagiProduct.idProductInstance, 
+        bizagiProduct.transactionId
+      );
+    } 
+    catch (componentError) 
+    {
+      // Si falla la creación de componentes, eliminar el producto creado
+      await CopBizagiProduct.findOneAndDelete({ idProductInstance: bizagiProduct.idProductInstance });
+      return res.status(500).json({ error: componentError.message });
+    }
+    
+    res.status(202).json(bizagiProduct);
+
+    // Si pasa la validación, continuar con la lógica (por ahora solo retornar el objeto)
+    res.status(202).json(envData);
+  } 
+  catch (error) 
+  {
     res.status(400).json({ error: error.message });
   }
 }
@@ -309,6 +403,7 @@ async function getBizagiProductComponentStatuses(req, res) {
 
 export {
   createBizagiProduct,
+  createBizagiEnvironment,
   getBizagiProducts,
   getBizagiProductById,
   updateBizagiProduct,

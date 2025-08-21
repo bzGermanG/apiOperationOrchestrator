@@ -64,6 +64,52 @@ const copBizagiProductSchema = new mongoose.Schema({
     amountLicenses: {
         type: Number
         // Opcional, no se requiere
+    },
+    category: {
+        type: String
+        // No obligatorio
+    },
+    environmentType: {
+        type: String,
+        enum: ['Dev', 'Test', 'Stage', 'Prod']
+        // No obligatorio
+    },
+    adminEmail: {
+        type: String,
+        match: [/^([a-zA-Z0-9_\-.+]+)@([a-zA-Z0-9\-.]+)\.([a-zA-Z]{2,})$/, 'El adminEmail no tiene un formato válido']
+        // No obligatorio
+    },
+    environmentName: {
+        type: String
+        // No obligatorio
+    },
+    smtpEnableSsl: {
+        type: String
+        // No obligatorio
+    },
+    smtpServer: {
+        type: String
+        // No obligatorio
+    },
+    smtpAccount: {
+        type: String
+        // No obligatorio
+    },
+    smtpPassword: {
+        type: String
+        // No obligatorio
+    },
+    smtpSenderAcc: {
+        type: String
+        // No obligatorio
+    },
+    smtpType: {
+        type: String
+        // No obligatorio
+    },
+    build: {
+        type: String
+        // No obligatorio
     }
 }, {
     timestamps: true,
