@@ -3,6 +3,7 @@ const router = express.Router();
 
 import {
     createBizagiProduct,
+    createBizagiEnvironment,
     getBizagiProducts,
     getBizagiProductById,
     updateBizagiProduct,
@@ -35,6 +36,9 @@ router.get('/getSubscriptions', getBizagiSubscriptions);
 
 //Create Bizagi Project
 router.post('/CreateProject', createBizagiProject);
+
+//Create Environment
+router.post('/CreateEnvironment', createBizagiEnvironment);
 
 //Obtener el estado del producto.
 router.get('/:id/Status', getStatus)
