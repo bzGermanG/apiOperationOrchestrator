@@ -4,6 +4,7 @@ import CopRegion from '../../model/apiCop/copRegion.js';
 import CopRecipes from '../../model/apiCop/copRecipes.js';
 import CopProduct from '../../model/apiCop/copProduct.js';
 import CopComponentStatus from '../../model/apiCop/copComponentStatus.js';
+import EnvCategory from '../../model/apiCop/copEnvCategory.js'; // Asegúrate de tener este modelo creado
 
 // Función auxiliar para crear componentes status basados en el nombre del producto
 async function createComponentStatusesForProduct(productName, idProductInstance, transactionId) {
@@ -203,6 +204,12 @@ async function createBizagiEnvironment(req, res)
     const recipe = await CopRecipes.findOne({ idProductCategoryVersion: envData.idProductCategoryVersion });
     if (!recipe) {
       return res.status(400).json({ error: 'El idProductCategoryVersion proporcionado no existe.' });
+    }
+
+    // Validar que la categoría exista en EnvCategory
+    const envCategory = await EnvCategory.findOne({ name: envData.category });
+    if (!envCategory) {
+      return res.status(400).json({ error: `La categoría '${envData.category}' no existe en EnvCategory.` });
     }
 
     // Buscar el idProduct del producto con nombre 'BizagiPaaS'
