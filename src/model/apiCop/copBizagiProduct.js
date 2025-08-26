@@ -110,6 +110,9 @@ const copBizagiProductSchema = new mongoose.Schema({
     build: {
         type: String
         // No obligatorio
+    },
+    environmentId: {
+        type: String
     }
 }, {
     timestamps: true,

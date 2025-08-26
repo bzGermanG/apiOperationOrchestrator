@@ -5,6 +5,8 @@ import CopRecipes from '../../model/apiCop/copRecipes.js';
 import CopProduct from '../../model/apiCop/copProduct.js';
 import CopComponentStatus from '../../model/apiCop/copComponentStatus.js';
 import EnvCategory from '../../model/apiCop/copEnvCategory.js'; // Asegúrate de tener este modelo creado
+import { v4 as uuidv4 } from 'uuid';
+
 
 // Función auxiliar para crear componentes status basados en el nombre del producto
 async function createComponentStatusesForProduct(productName, idProductInstance, transactionId) {
@@ -219,11 +221,12 @@ async function createBizagiEnvironment(req, res)
     }
     const idProduct = bizagiPaaSProduct.idProduct;
 
-    // Agregar deployStatus por defecto
+    // Agregar deployStatus por defecto y environmentId
     const productData = {
-      ...envData,
-      idProduct: idProduct,
-      deployStatus: 'creating'
+        ...envData,
+        idProduct: idProduct,
+        deployStatus: 'creating',
+        environmentId: uuidv4()
     };
 
     const bizagiProduct = new CopBizagiProduct(productData);
