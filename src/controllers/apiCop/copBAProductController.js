@@ -259,6 +259,52 @@ async function createBizagiEnvironment(req, res)
   }
 }
 
+// Encender Ventana de Mantenimiento
+async function enableMaintenanceWindow(req, res)
+{
+  try 
+  {
+    // Actualizar el campo maintenanceWindow a true para el producto indicado
+    const environmentId = req.params.idEnv;
+    const updated = await CopBizagiProduct.findOneAndUpdate(
+      { environmentId },
+      { maintenanceWindow: true },
+      { new: true }
+    );
+    if (!updated) {
+      return res.status(404).json({ error: 'Producto Bizagi no encontrado' });
+    }
+    res.status(200).json({ "Response": "Enabled", "maintenanceWindow": updated.maintenanceWindow });
+  } 
+  catch (error) 
+  {
+    res.status(500).json({ error: error.message });
+  }
+}
+
+// Apagar Ventana de Mantenimiento
+async function disableMaintenanceWindow(req, res)
+{
+  try 
+  {
+    // Actualizar el campo maintenanceWindow a true para el producto indicado
+    const environmentId = req.params.idEnv;
+    const updated = await CopBizagiProduct.findOneAndUpdate(
+      { environmentId },
+      { maintenanceWindow: false },
+      { new: true }
+    );
+    if (!updated) {
+      return res.status(404).json({ error: 'Producto Bizagi no encontrado' });
+    }
+    res.status(200).json({ "Response": "Disabled", "maintenanceWindow": updated.maintenanceWindow });
+  } 
+  catch (error) 
+  {
+    res.status(500).json({ error: error.message });
+  }
+}
+
 //Obtener el status del producto
 async function getStatus(req, res) 
 {
@@ -422,5 +468,7 @@ export {
   getBizagiProductsByRegion,
   getBizagiProductsByChannel,
   getStatus,
-  getBizagiProductComponentStatuses
+  getBizagiProductComponentStatuses,
+  enableMaintenanceWindow,
+  disableMaintenanceWindow
 };
