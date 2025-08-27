@@ -113,6 +113,10 @@ const copBizagiProductSchema = new mongoose.Schema({
     },
     environmentId: {
         type: String
+    },
+    maintenanceWindow: {
+        type: Boolean,
+        default: false
     }
 }, {
     timestamps: true,
