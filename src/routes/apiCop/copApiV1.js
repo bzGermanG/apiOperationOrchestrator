@@ -18,4 +18,7 @@ router.use("/Status", CopStatus.default);
 const ComponentStatus = await import('./copComponentStatusRoute.js');
 router.use("/ComponentStatus", ComponentStatus.default);
 
+const Environment = await import('./copEnvironmentRoute.js');
+router.use("/Environment", Environment.default);
+
 export default router; 
